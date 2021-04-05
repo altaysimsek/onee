@@ -6,7 +6,7 @@
 }
 
 h1 {
-    font-family: 'Avenir Next' !important;
+    font-family: 'didot' !important;
 }
 
 .ant-layout-header {
@@ -27,16 +27,15 @@ a {
 }
 .first-title {
     font-size: 82px;
-    font-weight: 700;
 }
 .secondary-title {
     font-size: 102px;
     color: #f4b439;
-    font-weight: 700;
 }
 .description-title {
     font-size: 22px;
     font-weight: 600;
+    padding-right: 15%;
 }
 .refer-btn {
     padding: 0.75rem 2.5rem;
@@ -56,14 +55,54 @@ a {
     margin-top: 5rem;
     display: flex;
     justify-content: center;
+
+    align-items: center;
+    font-size: 16px;
+    color: rgb(110, 110, 110);
+}
+.term-container h2 {
+    font-size: 22px;
+    margin-bottom: 33px;
+}
+.term-container ul {
+    padding: 0 18px 0 18px;
+}
+.term-container li {
+    margin-bottom: 1rem;
+}
+.image-container {
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
 }
 
 @media screen and (max-width: 480px) {
+    h1 {
+        line-height: 1;
+    }
+    .first-title {
+        font-size: 62px;
+    }
+    .secondary-title {
+        font-size: 82px;
+    }
     .hamburger-button {
         display: block;
     }
     .menu {
         display: none;
+    }
+    .ant-layout-content {
+        margin: 1rem !important;
+        padding: 2rem 2rem !important;
+    }
+}
+@media screen and (max-width: 991px) {
+    .image-container {
+        display: none;
+    }
+    .ant-layout-content {
+        margin: 1rem !important;
+        padding: 2rem 2rem !important;
     }
 }

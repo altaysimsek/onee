@@ -1,4 +1,4 @@
-import { Layout, Menu, Dropdown, Divider, Avatar, Drawer, Button } from 'antd';
+import { Layout, Menu, Dropdown, Divider, Avatar, Drawer } from 'antd';
 import { DownOutlined, UserOutlined, MenuOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 const { Header } = Layout;

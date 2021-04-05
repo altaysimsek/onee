@@ -1,4 +1,4 @@
-import { Layout, Row, Col, Divider } from 'antd';
+import { Layout, Row, Col, Divider, Image } from 'antd';
 import Navbar from './components/Navbar';
 const { Content } = Layout;
 
@@ -8,13 +8,13 @@ function App() {
             <Navbar></Navbar>
             <Content
                 style={{
-                    margin: '50px',
                     backgroundColor: 'white',
-                    padding: '2rem',
+                    padding: '2rem 6rem',
                     boxShadow: '0 0 20px rgb(0 0 0 / 20%)',
+                    margin: '3rem 6rem',
                 }}>
                 <Row>
-                    <Col span={14}>
+                    <Col xs={24} sm={24} md={24} lg={12}>
                         <h1>
                             <span className='first-title'>Register & Refer</span>
                             <br></br>
@@ -27,12 +27,16 @@ function App() {
                         </p>
                         <button className='refer-btn'>Refer Now</button>
                     </Col>
-                    <Col span={10}>
-                        <img src='./image.png' alt='Welcomer image for all of you'></img>
+                    <Col className='image-container' xs={0} sm={0} md={0} span={12}>
+                        <Image
+                            src='./image.png'
+                            width='100%'
+                            preview={false}
+                            alt='Welcome for all of you'></Image>
                     </Col>
                 </Row>
                 <Row className='description-container'>
-                    <Col style={{ marginRight: 'auto' }} span={16}>
+                    <Col style={{ paddingRight: '2rem' }} xs={24} sm={24} md={24} lg={18}>
                         <p>
                             A major breakthrough in the facilitation of bookings between luxury
                             rental property managers and travel agents, ONEE Luxury Travel is a B2B
@@ -59,13 +63,41 @@ function App() {
                         <p>Good luck!</p>
                     </Col>
                     <Col span={6}>
-                        <img src='./airpods.png' alt='W'></img>
+                        <Image
+                            preview={false}
+                            width='100%'
+                            src='./airpods.png'
+                            alt='Airpods and spotify'></Image>
                     </Col>
                 </Row>
                 <Divider />
-                <Row>
+                <Row className='term-container'>
                     <h2>Terms & Condition</h2>
+                    <ul>
+                        <li>
+                            This competition is only valid for Travel Agent’s that have registered
+                            with ONEE between xx/xx/xx – xx/xx/xx
+                        </li>
+                        <li>
+                            You must be a ONEE approved and verified Travel Agent to benefit from
+                            this offer.
+                        </li>
+                        <li>
+                            Please note that there is a maximum of one prize allotted per person.
+                        </li>
+                        <li>
+                            ONEE Luxury Travel reserves the right to substitute any prizes with a
+                            prize of equivalent or higher value in the event of circumstances
+                            outside of its control. The prize for the winner is non-exchangeable,
+                            non-transferable no cash alternative to the prize is offered.
+                        </li>
+                        <li>
+                            ONEE Luxury Travel reserves the right to hold, void, cancel, suspend or
+                            amend the prize draw where it becomes necessary to do so.
+                        </li>
+                    </ul>
                 </Row>
+                <Divider />
             </Content>
         </Layout>
     );
