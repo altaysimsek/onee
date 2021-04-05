@@ -1,4 +1,13 @@
 @import 'antd/dist/antd.css';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Avenir Next' !important;
+}
 
 .ant-layout-header {
     background: white;
@@ -15,6 +24,39 @@ a {
 }
 .hamburger-button {
     display: none;
+}
+.first-title {
+    font-size: 82px;
+    font-weight: 700;
+}
+.secondary-title {
+    font-size: 102px;
+    color: #f4b439;
+    font-weight: 700;
+}
+.description-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+.refer-btn {
+    padding: 0.75rem 2.5rem;
+    margin-top: 2rem;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 700;
+    transition: ease 0.18s;
+}
+.refer-btn:hover {
+    cursor: pointer;
+    background-color: rgb(31, 31, 31);
+}
+.description-container {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 480px) {

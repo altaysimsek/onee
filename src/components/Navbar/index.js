@@ -1,17 +1,20 @@
 import { Layout, Menu, Dropdown, Divider, Avatar, Drawer, Button } from 'antd';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined, UserOutlined, MenuOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 const { Header } = Layout;
 
-const menu = (
+const menuUser = (
     <Menu>
-        <Menu.Item key='0'>
-            <a href>Profile</a>
-        </Menu.Item>
-        <Menu.Item key='1'>
-            <a href>Settings</a>
-        </Menu.Item>
-        <Menu.Item key='3'>Log out</Menu.Item>
+        <Menu.Item key='0'>Profile</Menu.Item>
+        <Menu.Item key='1'>Settings</Menu.Item>
+        <Menu.Item key='2'>Log out</Menu.Item>
+    </Menu>
+);
+const menuCurrency = (
+    <Menu>
+        <Menu.Item key='0'>GBP</Menu.Item>
+        <Menu.Item key='1'>EUR</Menu.Item>
+        <Menu.Item key='2'>TRY</Menu.Item>
     </Menu>
 );
 
@@ -30,13 +33,13 @@ function Navbar() {
             <div className='logo'>
                 <img src='./oneelogo.png' alt='ONEE Logo'></img>
             </div>
-            <Button className='hamburger-button' type='primary' onClick={showDrawer}>
-                Open
-            </Button>
+
+            <MenuOutlined className='hamburger-button' onClick={showDrawer}></MenuOutlined>
+
             <Drawer
-                title='Basic Drawer'
-                placement='right'
-                closable={false}
+                title='ONEE TRAVEL'
+                placement='left'
+                closable={true}
                 onClose={onClose}
                 visible={visible}>
                 <p>Some contents...</p>
@@ -44,13 +47,13 @@ function Navbar() {
                 <p>Some contents...</p>
             </Drawer>
             <div className='menu'>
-                <Dropdown overlay={menu} trigger={['click']}>
+                <Dropdown overlay={menuCurrency} trigger={['click']}>
                     <a className='ant-dropdown-link' href onClick={(e) => e.preventDefault()}>
                         GBP <DownOutlined />
                     </a>
                 </Dropdown>
                 <Divider type='vertical'></Divider>
-                <Dropdown overlay={menu} trigger={['click']}>
+                <Dropdown overlay={menuUser} trigger={['click']}>
                     <a
                         className='ant-dropdown-link'
                         href
