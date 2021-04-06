@@ -1,4 +1,4 @@
-import { Layout, Row, Col, Divider, Image, Form, Radio, Input } from 'antd';
+import { Layout, Row, Col, Divider, Image, Form, Radio, Input, Select, Checkbox } from 'antd';
 import Navbar from './components/Navbar';
 import {
     PhoneOutlined,
@@ -9,6 +9,15 @@ import {
     YoutubeFilled,
 } from '@ant-design/icons';
 const { Content, Footer } = Layout;
+const { Option } = Select;
+const prefixSelector = (
+    <Form.Item name='prefix' noStyle>
+        <Select placeholder='Country' style={{ width: 70 }}>
+            <Option value='90'>🇹🇷</Option>
+            <Option value='1'>🇨🇦</Option>
+        </Select>
+    </Form.Item>
+);
 
 function App() {
     return (
@@ -109,9 +118,104 @@ function App() {
                 <h2 style={{ textAlign: 'center', fontSize: '42px' }}>
                     Invite Fellows to Register
                 </h2>
-                <Row className='form-container'>
-                    <Form></Form>
-                </Row>
+                <Form>
+                    <Row className='form-container'>
+                        <Col span={11}>
+                            <Row>
+                                <Col span={24}>
+                                    <Form.Item name='radio-group'>
+                                        <Radio.Group>
+                                            <Radio value='1'>Property Manager</Radio>
+                                            <Radio value='2'>Travel Agent</Radio>
+                                        </Radio.Group>
+                                    </Form.Item>
+                                </Col>
+                            </Row>
+                            <Row gutter={16}>
+                                <Col span={4} className='gutter-row'>
+                                    <Form.Item name='select'>
+                                        <Select placeholder='Title'>
+                                            <Option value='mr'>Mr</Option>
+                                            <Option value='mrs'>Mrs</Option>
+                                            <Option value='ms'>Ms</Option>
+                                            <Option value='ms'>Miss</Option>
+                                        </Select>
+                                    </Form.Item>
+                                </Col>
+                                <Col span={10} className='gutter-row'>
+                                    <Form.Item name='username'>
+                                        <Input placeholder='Firstname' />
+                                    </Form.Item>
+                                </Col>
+                                <Col span={10} className='gutter-row'>
+                                    <Form.Item name='surname'>
+                                        <Input placeholder='Surname' />
+                                    </Form.Item>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col span={24}>
+                                    <Form.Item name='phone'>
+                                        <Input
+                                            placeholder='Phone Number'
+                                            addonBefore={prefixSelector}
+                                            style={{ width: '100%' }}
+                                        />
+                                    </Form.Item>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col span={24}>
+                                    <Form.Item
+                                        name='email'
+                                        rules={[
+                                            {
+                                                type: 'email',
+                                                message: 'The input is not valid E-mail!',
+                                            },
+                                            {
+                                                required: true,
+                                                message: 'Please input your E-mail!',
+                                            },
+                                        ]}>
+                                        <Input placeholder='E-mail' />
+                                    </Form.Item>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col span={2}>
+                            <Divider type='vertical' style={{ height: '100%' }}></Divider>
+                        </Col>
+                        <Col span={11}>
+                            <Row>
+                                <Col>
+                                    Add a message and give your friends a chance to win this gift.
+                                    In order to earn gifts, they must also register to ONEE.
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col span={24}>
+                                    <Form.Item name='suggestion'>
+                                        <Input.TextArea />
+                                    </Form.Item>
+                                </Col>
+                                <Col>
+                                    <Form.Item name='remember' valuePropName='checked'>
+                                        <Checkbox>
+                                            I give consent for the information I have provided above
+                                            to be used with reference to this competition referral.
+                                        </Checkbox>
+                                    </Form.Item>
+                                </Col>
+                                <Col>
+                                    <button type='submit' className='refer-btn'>
+                                        Invite
+                                    </button>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Form>
             </Content>
             <Footer>
                 <Row className='upper-footer' gutter={16}>
